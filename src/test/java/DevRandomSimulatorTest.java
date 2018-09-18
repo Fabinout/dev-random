@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static java.util.Collections.singletonList;
 import static junit.framework.TestCase.fail;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -39,13 +38,13 @@ public class DevRandomSimulatorTest {
     @Test
     public void runAFewTimes() {
         //given
-        randomSimulator = new DevRandomSimulator("test seed", singletonList(randomizer1));
+        randomSimulator = new DevRandomSimulator("test seed", asList(new JVMFreeMemoryCharRandomizer(), new TimeCharRandomizer()));
 
         //when
         randomSimulator.runAFewTimes(1000);
 
         //then
-        verify(randomizer1, times(1000)).getRandomChar(anyLong());
+        //just observe what's output
     }
 
     @Test
