@@ -1,5 +1,3 @@
-import java.util.Optional;
-
 public class DevRandomSimulator {
 
     private String seed;
@@ -11,7 +9,18 @@ public class DevRandomSimulator {
     public void run() {
         TimeCharRandomizer timeCharRandomizer = new TimeCharRandomizer();
         while (true) {
-            System.out.print(timeCharRandomizer.getRandomChar(seed.hashCode()));
+            char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
+            System.out.print(randomChar);
+            seed = String.valueOf(randomChar);
+        }
+    }
+
+    public void runAFewTimes() {
+        TimeCharRandomizer timeCharRandomizer = new TimeCharRandomizer();
+        for (int i = 0; i < 1000; i++) {
+            char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
+            System.out.print(randomChar);
+            seed = String.valueOf(randomChar);
         }
     }
 }
