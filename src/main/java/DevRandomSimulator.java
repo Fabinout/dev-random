@@ -20,12 +20,17 @@ public class DevRandomSimulator {
     }
 
     private char printRandomValues() {
-        char randomChar = charRandomizers.get(0).getRandomChar(seed.hashCode());
+        CharRandomizer charRandomizer = selectARandomizer(seed);
+        char randomChar = charRandomizer.getRandomChar(seed.hashCode());
         System.out.print(randomChar);
         seed = String.valueOf(randomChar);
         return randomChar;
     }
 
+    CharRandomizer selectARandomizer(String previousChar) {
+        int numberOfRandomizers = charRandomizers.size();
+        return charRandomizers.get(Math.floorMod(previousChar.hashCode(), numberOfRandomizers));
+    }
 
     void runAFewTimes(int numberOfOutputs) {
         List<Character> results = new ArrayList<>();
