@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class TimeCharRandomizerTest {
@@ -13,6 +16,16 @@ public class TimeCharRandomizerTest {
             System.out.println("randomChar " + i + " = " + randomChar);
         }
     }
+
+    @Test
+    public void testRandomIsNotAlwaysTheSame() {
+        List<Character> results = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            results.add(timeCharRandomizer.getRandomChar());
+        }
+        assertThat(results.stream().distinct().count()).isGreaterThan(80);
+    }
+
 
     @Test
     public void testRandomCharsWithSpecificTimeMillis() {
