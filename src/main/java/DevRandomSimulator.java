@@ -7,7 +7,7 @@ public class DevRandomSimulator {
     }
 
     public void run() {
-        TimeCharRandomizer timeCharRandomizer = new TimeCharRandomizer();
+        CharRandomizer timeCharRandomizer = new TimeCharRandomizer();
         while (true) {
             char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
             System.out.print(randomChar);
@@ -16,7 +16,7 @@ public class DevRandomSimulator {
     }
 
     public void runAFewTimes() {
-        TimeCharRandomizer timeCharRandomizer = new TimeCharRandomizer();
+        CharRandomizer timeCharRandomizer = new TimeCharRandomizer();
         for (int i = 0; i < 1000; i++) {
             char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
             System.out.print(randomChar);
