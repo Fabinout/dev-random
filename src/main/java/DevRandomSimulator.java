@@ -9,10 +9,9 @@ public class DevRandomSimulator {
     private String seed;
     private CharRandomizer timeCharRandomizer;
 
-
-    public DevRandomSimulator(String seed) {
+    public DevRandomSimulator(String seed, TimeCharRandomizer randomizer) {
         this.seed = seed;
-        timeCharRandomizer = new TimeCharRandomizer();
+        timeCharRandomizer = randomizer;
     }
 
     void run() {
