@@ -47,6 +47,7 @@ public class DevRandomSimulatorTest {
         randomSimulator.runAFewTimes(1000);
 
         //then
-        verify(randomizer1, times(1000)).getRandomChar(anyLong());
+        verify(randomizer1, atLeast(300)).getRandomChar(anyLong());
+        verify(randomizer2, atLeast(300)).getRandomChar(anyLong());
     }
 }
