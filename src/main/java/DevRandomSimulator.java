@@ -15,7 +15,7 @@ public class DevRandomSimulator {
 
     void run() {
         while (true) {
-            char randomChar = printRandomValues();
+            printRandomValues();
         }
     }
 
