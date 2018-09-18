@@ -1,8 +1,6 @@
 package characterRandomizers;
 
-import characterRandomizers.CharRandomizer;
-
-public class NanoTimeCharRandomizer implements CharRandomizer {
+public class JVMFreeMemoryCharRandomizer implements CharRandomizer {
 
     @Override
     public char getRandomChar(long randomLong) {
