@@ -12,7 +12,7 @@ public class DevRandomSimulator {
     public void run(char a) {
         TimeCharRandomizer timeCharRandomizer = new TimeCharRandomizer();
         while (true) {
-            System.out.print(timeCharRandomizer.getRandomChar());
+            System.out.print(timeCharRandomizer.getRandomChar(a));
 
         }
     }

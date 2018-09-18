@@ -1,10 +1,10 @@
 public class TimeCharRandomizer {
 
-    char getRandomChar(long currentTimeMillis) {
+    char getRandomCharWithTime(long currentTimeMillis) {
         return (char) currentTimeMillis;
     }
 
-    public char getRandomChar(){
-        return getRandomChar(System.currentTimeMillis());
+    public char getRandomChar(long randomLong){
+        return getRandomCharWithTime(System.currentTimeMillis() + randomLong);
     }
 }
