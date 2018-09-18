@@ -19,7 +19,7 @@ public class TimeCharRandomizerTest {
 
     @Test
     public void testRandomCharsWithSpecificTimeMillis() {
-        char pseudoRandomChar = timeCharRandomizer.getRandomCharWithTime(10l);
+        char pseudoRandomChar = timeCharRandomizer.castLongToChar(10l);
         assertThat(pseudoRandomChar).isEqualTo('\n');
     }
 
