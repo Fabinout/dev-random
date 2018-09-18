@@ -1,7 +1,5 @@
 package characterRandomizers;
 
-import characterRandomizers.CharRandomizer;
-
 public class TimeCharRandomizer implements CharRandomizer {
 
     char castLongToChar(long l) {

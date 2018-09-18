@@ -7,27 +7,31 @@ import java.util.List;
 public class DevRandomSimulator {
 
     private String seed;
+    private CharRandomizer timeCharRandomizer;
 
     public DevRandomSimulator(String seed) {
         this.seed = seed;
+        timeCharRandomizer = new TimeCharRandomizer();
     }
 
-    public void run() {
-        CharRandomizer timeCharRandomizer = new TimeCharRandomizer();
+    void run() {
         while (true) {
-            char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
-            System.out.print(randomChar);
-            seed = String.valueOf(randomChar);
+            char randomChar = printRandomValues();
         }
     }
 
-    public void runAFewTimes(int numberOfOutputs) {
+    private char printRandomValues() {
+        char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
+        System.out.print(randomChar);
+        seed = String.valueOf(randomChar);
+        return randomChar;
+    }
+
+
+    void runAFewTimes(int numberOfOutputs) {
         List<Character> results = new ArrayList<>();
-        CharRandomizer timeCharRandomizer = new TimeCharRandomizer();
         for (int i = 0; i < numberOfOutputs; i++) {
-            char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
-            System.out.print(randomChar);
-            seed = String.valueOf(randomChar);
+            char randomChar = printRandomValues();
             results.add(randomChar);
         }
         System.out.println("Results of all generated Numbers:");
