@@ -1,5 +1,4 @@
 import characterRandomizers.CharRandomizer;
-import characterRandomizers.TimeCharRandomizer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +6,11 @@ import java.util.List;
 public class DevRandomSimulator {
 
     private String seed;
-    private CharRandomizer timeCharRandomizer;
+    private List<CharRandomizer> charRandomizers;
 
-    public DevRandomSimulator(String seed, TimeCharRandomizer randomizer) {
+    public DevRandomSimulator(String seed, List<CharRandomizer> randomizers) {
         this.seed = seed;
-        timeCharRandomizer = randomizer;
+        charRandomizers = randomizers;
     }
 
     void run() {
@@ -21,7 +20,7 @@ public class DevRandomSimulator {
     }
 
     private char printRandomValues() {
-        char randomChar = timeCharRandomizer.getRandomChar(seed.hashCode());
+        char randomChar = charRandomizers.get(0).getRandomChar(seed.hashCode());
         System.out.print(randomChar);
         seed = String.valueOf(randomChar);
         return randomChar;

@@ -1,12 +1,14 @@
 import characterRandomizers.TimeCharRandomizer;
 
+import static java.util.Collections.singletonList;
+
 public class Main {
 
     private static final String DEFAULT_SEED = "Symbiont";
 
     public static void main(String[] args) {
         String seed = extractSeed(args);
-        DevRandomSimulator devRandomSimulator = new DevRandomSimulator(seed, new TimeCharRandomizer());
+        DevRandomSimulator devRandomSimulator = new DevRandomSimulator(seed, singletonList(new TimeCharRandomizer()));
         devRandomSimulator.run();
     }
 
