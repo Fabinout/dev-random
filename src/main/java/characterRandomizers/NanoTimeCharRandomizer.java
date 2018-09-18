@@ -1,3 +1,7 @@
+package characterRandomizers;
+
+import characterRandomizers.CharRandomizer;
+
 public class NanoTimeCharRandomizer implements CharRandomizer {
 
     @Override

@@ -1,3 +1,6 @@
+import characterRandomizers.CharRandomizer;
+import characterRandomizers.TimeCharRandomizer;
+
 import java.util.ArrayList;
 import java.util.List;
 
