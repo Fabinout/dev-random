@@ -1,4 +1,4 @@
-public class TimeCharRandomizer {
+public class TimeCharRandomizer implements CharRandomizer {
 
     char castLongToChar(long l) {
         return (char) l;
