@@ -1,5 +1,3 @@
-import java.util.Optional;
-
 public class Main {
 
     private static final String DEFAULT_SEED = "Symbiont";
