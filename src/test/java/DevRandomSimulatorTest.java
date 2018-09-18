@@ -2,8 +2,12 @@ import org.junit.Test;
 
 public class DevRandomSimulatorTest {
 
+    private DevRandomSimulator randomSimulator;
+
+
     @Test
     public void runAFewTimes() {
-        new DevRandomSimulator("lkqjsdf").runAFewTimes(1000);
+        randomSimulator = new DevRandomSimulator("lkjdsqfli");
+        randomSimulator.runAFewTimes(1000);
     }
 }
