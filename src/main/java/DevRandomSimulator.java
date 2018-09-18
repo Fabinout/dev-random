@@ -30,10 +30,8 @@ public class DevRandomSimulator {
             seed = String.valueOf(randomChar);
             results.add(randomChar);
         }
-
         System.out.println("Results of all generated Numbers:");
         System.out.println(numberOfDifferentValues(results, numberOfOutputs));
-
     }
 
     private String numberOfDifferentValues(List<Character> results, int numberOfOutputs) {
