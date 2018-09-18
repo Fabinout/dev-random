@@ -5,15 +5,13 @@ public class DevRandomSimulator {
     private String seed;
 
     public DevRandomSimulator(String seed) {
-        this.seed = Optional.ofNullable(seed)
-                .orElse("Symbiont");
+        this.seed = seed;
     }
 
-    public void run(char a) {
+    public void run() {
         TimeCharRandomizer timeCharRandomizer = new TimeCharRandomizer();
         while (true) {
-            System.out.print(timeCharRandomizer.getRandomChar(a));
-
+            System.out.print(timeCharRandomizer.getRandomChar(seed.hashCode()));
         }
     }
 }
